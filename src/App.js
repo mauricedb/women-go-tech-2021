@@ -1,4 +1,6 @@
 import logo from "./logo.svg";
+
+import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
 import { Movie } from "./components/Movie";
@@ -14,7 +16,7 @@ const movie19404 = {
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <Movie movie={movie19404} />
     </div>
   );
