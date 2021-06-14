@@ -21,6 +21,27 @@ export function Movies() {
   return (
     <div>
       <h1>Movies</h1>
+
+      <table className="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {movies.map((movie) => (
+            <tr key={movie.id}>
+              <td>{movie.title}</td>
+              <td>
+                <button className="btn btn-primary" onClick={() => {}}>
+                  Edit
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
