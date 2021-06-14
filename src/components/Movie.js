@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function Movie({ movie }) {
+export function Movie({ movie, clearCurrentMovie }) {
   const [thisMovie, setThisMovie] = useState(movie);
 
   return (
@@ -8,6 +8,7 @@ export function Movie({ movie }) {
       onSubmit={(e) => {
         e.preventDefault();
         alert(JSON.stringify(thisMovie, null, 2));
+        clearCurrentMovie();
       }}
     >
       <div className="mb-3">

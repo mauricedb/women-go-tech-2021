@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function Movies() {
+export function Movies({ setCurrentMovie }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -34,7 +34,12 @@ export function Movies() {
             <tr key={movie.id}>
               <td>{movie.title}</td>
               <td>
-                <button className="btn btn-primary" onClick={() => {}}>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => {
+                    setCurrentMovie(movie);
+                  }}
+                >
                   Edit
                 </button>
               </td>
