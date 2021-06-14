@@ -4,7 +4,12 @@ export function Movie({ movie }) {
   const [thisMovie, setThisMovie] = useState(movie);
 
   return (
-    <form>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        alert(JSON.stringify(thisMovie, null, 2));
+      }}
+    >
       <div>
         <label>Title</label>
         <input
@@ -44,6 +49,9 @@ export function Movie({ movie }) {
             setThisMovie({ ...thisMovie, release_date: e.target.value })
           }
         />
+      </div>
+      <div>
+        <button>Submit</button>
       </div>
     </form>
   );
